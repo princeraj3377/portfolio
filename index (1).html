@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prince Raj | AI/ML Enthusiast</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + JetBrains Mono (code feel) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <!-- Terminal-style logo -->
+      <span class="logo-bracket">&lt;</span>PR<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero"     class="nav-link active" data-section="hero">Home</a></li>
+      <li><a href="#about"    class="nav-link"        data-section="about">About</a></li>
+      <li><a href="#skills"   class="nav-link"        data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link"        data-section="projects">Projects</a></li>
+      <li><a href="#education"class="nav-link"        data-section="education">Education</a></li>
+      <li><a href="#contact"  class="nav-link"        data-section="contact">Contact</a></li>
+    </ul>
+    <!-- Hamburger for mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="hero-section">
+    <!-- Animated grid background -->
+    <div class="grid-bg"></div>
+    <!-- Floating blobs for depth -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="hero-content">
+      <!-- Terminal-style greeting -->
+      <div class="terminal-tag fade-up">
+        <span class="term-prompt">~/portfolio $</span>
+        <span class="term-cmd"> whoami</span>
+      </div>
+
+      <h1 class="hero-name fade-up delay-1">
+        Prince<br><span class="accent-text">Raj</span>
+      </h1>
+
+      <!-- Typing animation container -->
+      <p class="hero-tagline fade-up delay-2">
+        <span class="typing-text" id="typingText"></span>
+        <span class="cursor-blink">|</span>
+      </p>
+
+      <p class="hero-intro fade-up delay-3">
+        A passionate Computer Science student building intelligent systems,
+        crafting web experiences, and solving problems one algorithm at a time.
+      </p>
+
+      <div class="hero-buttons fade-up delay-4">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-hint fade-up delay-5">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>scroll down</span>
+      </div>
+    </div>
+
+    <!-- Decorative code snippet floating card -->
+    <div class="hero-code-card fade-right">
+      <div class="code-card-header">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="code-filename">prince.py</span>
+      </div>
+      <pre class="code-snippet"><code><span class="c-keyword">class</span> <span class="c-class">Prince</span>:
+  <span class="c-keyword">def</span> <span class="c-fn">__init__</span>(self):
+    self.name   = <span class="c-str">"Prince Raj"</span>
+    self.degree = <span class="c-str">"B.Tech CSE (AI&ML)"</span>
+    self.uni    = <span class="c-str">"Galgotias University"</span>
+    self.loves  = [<span class="c-str">"AI"</span>, <span class="c-str">"WebDev"</span>,
+                   <span class="c-str">"Problem Solving"</span>]
+
+  <span class="c-keyword">def</span> <span class="c-fn">greet</span>(self):
+    <span class="c-keyword">return</span> <span class="c-str">"Let's build something cool!"</span>
+
+<span class="c-comment"># Currently running ...</span>
+prince = <span class="c-class">Prince</span>()
+prince.greet()</code></pre>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="about-section section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Avatar placeholder with initials -->
+        <div class="about-avatar reveal">
+          <div class="avatar-ring">
+            <div class="avatar-initials">PR</div>
+          </div>
+          <!-- Stat badges -->
+          <div class="stat-badge badge-top reveal-right">
+            <span class="badge-num">2027</span>
+            <span class="badge-label">Graduating</span>
+          </div>
+          <div class="stat-badge badge-bottom reveal-right delay-1">
+            <span class="badge-num">AI &amp; ML</span>
+            <span class="badge-label">Specialization</span>
+          </div>
+        </div>
+
+        <!-- About text -->
+        <div class="about-text reveal delay-1">
+          <p class="about-para">
+            Hey there! I'm <strong>Prince Raj</strong>, a 2nd-year B.Tech student
+            majoring in Computer Science with a specialization in
+            <span class="highlight">Artificial Intelligence &amp; Machine Learning</span>
+            at Galgotias University.
+          </p>
+          <p class="about-para">
+            I'm deeply fascinated by how machines learn and how elegant code can power
+            real-world intelligence. Whether it's training a model, building a responsive
+            web app, or debugging at 2 AM — I'm all in.
+          </p>
+          <p class="about-para">
+            Beyond coding, I love exploring new technologies, participating in hackathons,
+            and constantly expanding my problem-solving toolkit. I believe in learning
+            by doing — and failing forward.
+          </p>
+
+          <div class="about-interests">
+            <span class="interest-chip">🤖 Artificial Intelligence</span>
+            <span class="interest-chip">📊 Machine Learning</span>
+            <span class="interest-chip">🌐 Web Development</span>
+            <span class="interest-chip">🧩 Problem Solving</span>
+            <span class="interest-chip">☕ Coffee &amp; Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="skills-section section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Programming Languages -->
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="skill-card-title">Languages</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Java</span><span>75%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Python</span><span>80%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>JavaScript</span><span>70%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-card reveal delay-1">
+          <div class="skill-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="skill-card-title">Web Development</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>HTML</span><span>85%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>CSS</span><span>80%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>JavaScript</span><span>70%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-card reveal delay-2">
+          <div class="skill-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3 class="skill-card-title">Database</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>SQL</span><span>72%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="72"></div></div>
+            </div>
+          </div>
+          <!-- Pill badges for extra tech -->
+          <div class="skill-pills">
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">SQLite</span>
+            <span class="skill-pill">Queries</span>
+          </div>
+        </div>
+
+        <!-- AI/ML -->
+        <div class="skill-card reveal delay-1">
+          <div class="skill-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3 class="skill-card-title">AI / ML</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">NumPy</span>
+            <span class="skill-pill">Pandas</span>
+            <span class="skill-pill">Scikit-learn</span>
+            <span class="skill-pill">Data Preprocessing</span>
+            <span class="skill-pill">Regression</span>
+            <span class="skill-pill">Classification</span>
+          </div>
+        </div>
+
+        <!-- Core Skills -->
+        <div class="skill-card reveal delay-2">
+          <div class="skill-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="skill-card-title">Core Skills</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Problem Solving</span><span>85%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Communication</span><span>80%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="projects-section section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <div class="project-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="#" class="icon-link" title="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="icon-link" title="Live Demo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">AI Study Planner</h3>
+          <p class="project-desc">
+            A smart study planner that uses basic ML algorithms to analyze your learning pace and
+            generate personalized study schedules based on subject difficulty and deadlines.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+          <a href="#" class="btn btn-project">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal delay-1">
+          <div class="project-card-top">
+            <div class="project-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="#" class="icon-link" title="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="icon-link" title="Live Demo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">DevQuote — Quote App</h3>
+          <p class="project-desc">
+            A minimalist web application that serves random programming quotes and memes
+            to keep developers motivated. Features daily quotes, favorites list, and share
+            to social media functionality.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+          <a href="#" class="btn btn-project">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal delay-2">
+          <div class="project-card-top">
+            <div class="project-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="#" class="icon-link" title="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="icon-link" title="Live Demo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Spam Detector (ML)</h3>
+          <p class="project-desc">
+            An email/SMS spam classifier built using Natural Language Processing and Naive Bayes
+            algorithm. Trained on a labeled dataset with ~97% accuracy. Includes a clean
+            web interface for real-time predictions.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLTK</span>
+            <span class="tech-tag">Naive Bayes</span>
+            <span class="tech-tag">Streamlit</span>
+          </div>
+          <a href="#" class="btn btn-project">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION SECTION ========== -->
+  <section id="education" class="education-section section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+
+      <div class="edu-timeline">
+        <!-- Education card -->
+        <div class="edu-card reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <div class="edu-top-row">
+              <div class="edu-badge">B.Tech</div>
+              <span class="edu-year">2023 — 2027</span>
+            </div>
+            <h3 class="edu-degree">Computer Science &amp; Engineering</h3>
+            <p class="edu-spec">Specialization in Artificial Intelligence &amp; Machine Learning</p>
+            <p class="edu-uni">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Galgotias University, Greater Noida
+            </p>
+            <div class="edu-chips">
+              <span class="edu-chip">Expected Graduation: 2027</span>
+              <span class="edu-chip">4-Year Program</span>
+              <span class="edu-chip">Full Time</span>
+            </div>
+            <div class="edu-subjects">
+              <p class="subjects-label">Key Subjects:</p>
+              <div class="subjects-grid">
+                <span>Data Structures &amp; Algorithms</span>
+                <span>Machine Learning</span>
+                <span>Artificial Intelligence</span>
+                <span>Database Management</span>
+                <span>Web Technologies</span>
+                <span>Operating Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- You can add more timeline items here (e.g., 12th) -->
+        <div class="edu-card reveal delay-1">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <div class="edu-top-row">
+              <div class="edu-badge edu-badge-secondary">12th</div>
+              <span class="edu-year">2022 — 2023</span>
+            </div>
+            <h3 class="edu-degree">Higher Secondary Education</h3>
+            <p class="edu-spec">Science Stream (PCM + Computer Science)</p>
+            <p class="edu-uni">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Senior Secondary School, India
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 05</span>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Have a project in mind or just want to say hi? Let's talk!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact info -->
+        <div class="contact-info reveal">
+          <a href="mailto:princeraj46574@gmail.com" class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">princeraj46574@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/prince-kumar-448a07297/" target="_blank" class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/princeraj</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/princeraj3377" target="_blank" class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/princeraj3377</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact form -->
+        <div class="contact-form-wrap reveal delay-1">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Hey Prince, I wanted to talk about..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <!-- Success message (hidden by default) -->
+            <div class="form-success" id="formSuccess">
+              ✅ Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>PR<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">
+        © 2025 Prince Raj — Built with ❤️, lots of ☕ &amp; pure HTML/CSS/JS
+      </p>
+      <div class="footer-socials">
+        <a href="https://github.com/princeraj" target="_blank" class="social-link" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/princeraj" target="_blank" class="social-link" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:princeraj@example.com" class="social-link" title="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
