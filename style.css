@@ -699,7 +699,11 @@ img { max-width: 100%; display: block; }
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
   position: relative;
   overflow: hidden;
+  order: 2;
 }
+.project-card-featured { order: -1; }
+.project-card-estateiq { order: 0; }
+.project-card-taskflow { order: 1; }
 .project-card::after {
   content: '';
   position: absolute;
