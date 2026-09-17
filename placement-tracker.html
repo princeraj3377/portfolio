@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1117">
-  <meta name="description" content="A personal checklist for all 118 placement interview questions in DSA, OOPS, DBMS, Networking and SQL.">
+  <meta name="description" content="Follow Prince Raj's preparation progress across 118 placement interview questions in DSA, OOPS, DBMS, Networking and SQL.">
   <title>Placement Prep | Prince Raj</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,6 +83,13 @@
     .status-tab[aria-pressed="true"]{background:var(--accent-glow)}
     .toast{border:1px solid var(--accent-border)}
     .skip-link{color:var(--accent);border:1px solid var(--accent-border)}
+    .publication-panel{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 20px;margin:0 0 22px;border:1px solid var(--accent-border);background:var(--accent-glow);border-radius:8px}
+    .publication-panel strong{font-family:var(--font-display);font-size:14px;font-weight:600}.publication-panel p{font-size:12px;color:var(--muted);line-height:1.75;margin:6px 0 0;max-width:690px}
+    .question-check:disabled{opacity:1;cursor:default}body[data-mode="public"] .question-label,body[data-mode="public"] .check-target{cursor:default}
+    .question-table th.state-col{width:110px}.state{white-space:normal;line-height:1.6}
+    @media(max-width:1150px){.heading-row{flex-wrap:wrap}.actions{flex-wrap:wrap}}
+    @media(max-width:620px){.publication-panel{align-items:flex-start;flex-direction:column;padding:15px}.publication-panel p{font-size:11px}.actions{flex-wrap:wrap}}
+    @media print{.publication-panel{background:white;border-color:#ccc;color:#111;break-inside:avoid}.publication-panel .btn{display:none}}
     @media(min-width:1500px){.content{padding-top:45px}.overview{grid-template-columns:1fr 1.2fr}.question-label{font-size:13px}.question-table td{padding-top:18px;padding-bottom:18px}}
     @media(max-width:1150px){:root{--sidebar:207px}.sidebar{padding-left:15px;padding-right:15px}.brand{font-size:21px}.nav-item.active:before{left:-15px}.content{padding:30px 27px}.topbar{padding:0 27px}.overview{gap:15px;grid-template-columns:1fr 1fr}.stat{padding:0 17px}.status-tab{padding:8px 8px;font-size:10px}.tab-count{display:none}.search-field{max-width:none}.heading-row{gap:14px}.intro{max-width:390px}.sheet-helper{display:none}}
     @media(max-width:850px){:root{--sidebar:180px}.sidebar{padding:27px 12px 18px}.brand{font-size:19px;margin:0 5px 36px;gap:7px}.brand-mark{width:29px;height:30px}.nav-item{font-size:11px;padding:12px 8px;gap:8px}.nav-item.active:before{left:-12px}.nav-caption{font-size:9px;margin-left:8px}.note-card{padding:15px 12px}.note-card h2{font-size:16px}.content{padding:26px 22px}.topbar{padding:0 22px}.heading-row{align-items:flex-start}.actions{gap:6px;margin-top:24px}.actions>.icon-button{display:none}h1{font-size:31px}.overview{grid-template-columns:1fr}.stats{padding:18px 0}.stat{display:grid;grid-template-columns:23px 1fr;column-gap:8px;align-content:center}.stat-icon{grid-row:1/3;align-self:center}.stat-number{font-size:24px;margin:0 0 4px}.stat-label{font-size:10px}.progress-card{padding:20px 23px}.progress-top{margin-bottom:12px}.filterbar{flex-wrap:wrap}.status-tabs{width:100%;margin-bottom:2px}.status-tab{flex:1;justify-content:center}.tab-count{display:inline}.search-field{margin:0;flex:1}.question-table th.state-col,.state-cell{display:none}.question-table th.level-col{width:87px}.question-table th.number-col{width:32px}.question-table th.check-col{width:43px}.topic-heading{padding:15px}.topic-progress{gap:7px}.mini-track{width:40px}.topic-name{font-size:11px}.question-table td{padding:14px 8px}.question-table td.check-cell{padding-left:15px}.question-label{font-size:12px}.question-table th.check-col{padding-left:15px}}
@@ -112,7 +119,7 @@
   <a href="#question-sheet" class="skip-link">Skip to questions</a>
   <aside class="sidebar" aria-label="Study navigation">
     <a class="brand" href="index.html" aria-label="Prince Raj portfolio"><span class="portfolio-logo"><span class="logo-bracket">&lt;</span>PR<span class="logo-bracket">/&gt;</span></span><span class="brand-caption">prep<br>tracker</span></a>
-    <p class="nav-caption">YOUR WORKSPACE</p>
+    <p class="nav-caption" id="workspace-caption">PREPARATION</p>
     <nav class="subject-nav" aria-label="Subjects" id="subject-nav"></nav>
     <div class="sidebar-bottom">
       <div class="note-card"><div class="note-icon"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></div><h2>A little progress,<br>every day.</h2><p>Ek question, ek tick.<br>Bas aise hi aage badhte raho.</p></div>
@@ -120,30 +127,32 @@
     </div>
   </aside>
   <div class="workspace">
-    <header class="topbar"><div class="breadcrumb"><a class="breadcrumb-home" href="index.html"><svg class="icon" style="width:15px;height:15px" aria-hidden="true"><use href="#i-arrow"/></svg>Portfolio</a><span class="slash">/</span><strong>Placement prep</strong></div><div class="topbar-right"><span class="save-state" id="save-state" title="Progress is saved in this browser on this device"><span class="save-dot"></span><span id="save-label">Saved on this device</span></span><span class="avatar" aria-hidden="true">PR</span></div></header>
+    <header class="topbar"><div class="breadcrumb"><a class="breadcrumb-home" href="index.html"><svg class="icon" style="width:15px;height:15px" aria-hidden="true"><use href="#i-arrow"/></svg>Portfolio</a><span class="slash">/</span><strong>Placement prep</strong></div><div class="topbar-right"><span class="save-state" id="save-state" title="Prince Raj’s published preparation progress"><span class="save-dot"></span><span id="save-label">Public progress</span></span><span class="avatar" aria-hidden="true">PR</span></div></header>
     <main class="content">
-      <div class="heading-row"><div><p class="eyebrow">~/placement $ <span>track --progress</span></p><h1>Placement <span class="accent-text">prep</span></h1><p class="intro">A clear plan. One question at a time.<br>Question complete ho gaya? Tick karo aur progress track karo.</p></div><div class="actions"><button class="btn icon-button" id="print-button" title="Print current sheet" aria-label="Print current sheet"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg></button><div class="backup-wrap"><button class="btn" id="backup-button" aria-expanded="false" aria-controls="backup-menu"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Backup<svg class="icon" style="width:11px" aria-hidden="true"><use href="#i-chevron"/></svg></button><div class="backup-menu" id="backup-menu" hidden><button id="download-backup"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Save progress backup</button><button id="restore-backup"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>Restore from backup</button></div></div><button class="btn primary" id="export-button"><svg class="icon" aria-hidden="true"><use href="#i-sheet"/></svg>Export sheet</button></div></div>
+      <div class="heading-row"><div><p class="eyebrow">~/placement $ <span>track --progress</span></p><h1>Placement <span class="accent-text">prep</span></h1><p class="intro" id="page-intro">A clear plan. One question at a time.<br>Question complete ho gaya? Tick karo aur progress track karo.</p></div><div class="actions"><button class="btn icon-button" id="print-button" title="Print current sheet" aria-label="Print current sheet"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg></button><div class="backup-wrap owner-only" hidden><button class="btn" id="backup-button" aria-expanded="false" aria-controls="backup-menu"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Backup<svg class="icon" style="width:11px" aria-hidden="true"><use href="#i-chevron"/></svg></button><div class="backup-menu" id="backup-menu" hidden><button id="download-backup"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Save progress backup</button><button id="restore-backup"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>Restore from backup</button></div></div><button class="btn owner-only" id="publish-button" hidden>Save public update</button><button class="btn primary" id="export-button"><svg class="icon" aria-hidden="true"><use href="#i-sheet"/></svg>Export sheet</button></div></div>
+      <section class="publication-panel" aria-label="Preparation progress publication"><div><strong id="publication-title">Prince Raj’s preparation</strong><p id="publication-description">Loading the latest public progress snapshot…</p></div><a class="btn" id="mode-link" href="placement-tracker.html?edit=1">Update my progress</a></section>
       <p id="storage-warning" class="storage-warning" role="alert" hidden></p>
       <section class="overview" aria-label="Overall progress">
-        <div class="progress-card"><div class="progress-top"><span class="progress-label">Your overall progress</span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><div class="progress-value"><strong id="progress-done" style="font-weight:inherit">0</strong><span>/ 118 questions completed</span></div><div class="progress-track" id="overall-progress" role="progressbar" aria-label="Overall completion" aria-valuemin="0" aria-valuemax="118" aria-valuenow="0"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div><div class="progress-bottom"><span id="progress-message">Your first tick is the first step.</span><span class="progress-percent" id="progress-percent">0%</span></div></div>
-        <div class="stats"><div class="stat"><span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span><span class="stat-number">118</span><span class="stat-label">Total questions</span></div><div class="stat completed"><span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg></span><span class="stat-number" id="stat-done">0</span><span class="stat-label">Completed</span></div><div class="stat"><span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><span class="stat-number" id="stat-remaining">118</span><span class="stat-label">Left to explore</span></div></div>
+        <div class="progress-card"><div class="progress-top"><span class="progress-label" id="progress-label">Prince Raj’s overall progress</span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><div class="progress-value"><strong id="progress-done" style="font-weight:inherit">—</strong><span>/ 118 questions completed</span></div><div class="progress-track" id="overall-progress" role="progressbar" aria-label="Overall completion" aria-valuemin="0" aria-valuemax="118" aria-valuenow="0"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div><div class="progress-bottom"><span id="progress-message">Loading public progress…</span><span class="progress-percent" id="progress-percent">—</span></div></div>
+        <div class="stats"><div class="stat"><span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span><span class="stat-number">118</span><span class="stat-label">Total questions</span></div><div class="stat completed"><span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg></span><span class="stat-number" id="stat-done">—</span><span class="stat-label">Completed</span></div><div class="stat"><span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><span class="stat-number" id="stat-remaining">—</span><span class="stat-label">Left to explore</span></div></div>
       </section>
       <section id="question-sheet" aria-label="Question checklist" tabindex="-1">
-        <div class="sheet-title-row"><div class="sheet-title"><h2 id="sheet-heading">Your question sheet</h2><span class="count-pill" id="sheet-count">118 questions</span></div><span class="sheet-helper"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Every tick is saved automatically</span></div>
+        <div class="sheet-title-row"><div class="sheet-title"><h2 id="sheet-heading">Your question sheet</h2><span class="count-pill" id="sheet-count">118 questions</span></div><span class="sheet-helper" id="sheet-helper"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Every tick is saved automatically</span></div>
         <nav class="mobile-subjects" id="mobile-subjects" aria-label="Filter by subject"></nav>
         <div class="filterbar"><div class="status-tabs" role="group" aria-label="Completion status"><button class="status-tab" data-status="all" aria-pressed="true">All questions <span class="tab-count" id="tab-all">118</span></button><button class="status-tab" data-status="pending" aria-pressed="false">To do <span class="tab-count" id="tab-pending">118</span></button><button class="status-tab" data-status="done" aria-pressed="false">Completed <span class="tab-count" id="tab-done">0</span></button></div><label class="search-field"><span class="sr-only">Search questions</span><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input id="search" type="search" placeholder="Search a question or concept..." autocomplete="off"></label><label><span class="sr-only">Filter by difficulty</span><select class="difficulty-select" id="difficulty"><option value="all">All difficulties</option><option>Easy</option><option>Medium</option><option>Tough</option><option>Very Tough</option></select></label></div>
         <div class="result-line"><span id="result-count" role="status" aria-live="polite">Showing all 118 questions</span><button class="clear-filters" id="clear-filters" hidden>Clear filters</button><button class="collapse-button" id="collapse-button"><svg class="icon" aria-hidden="true"><use href="#i-collapse"/></svg><span>Collapse all</span></button></div>
         <div id="questions"></div>
         <div class="empty-state" id="empty-state" hidden><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 id="empty-title">No questions found</h3><p id="empty-message">Try another keyword or change your filters.</p><button class="btn" id="empty-clear">Show all questions</button></div>
-        <noscript><p class="storage-warning">Please enable JavaScript to load the 118 questions and save your checklist progress.</p></noscript>
-        <div class="sheet-footer"><p>From “Competency level Examples (1).docx”<br>5 subjects · 4 difficulty levels · 118 questions</p><button class="reset-button" id="reset-button">Reset progress</button></div>
-        <p class="footer-note"><strong>Make it your routine.</strong> Easy &amp; Medium for screening rounds. Tough for technical interviews. Very Tough for design &amp; advanced rounds.<br>Progress stays in this browser on this device. Use Backup to keep a copy or move it to another device.</p>
+        <noscript><p class="storage-warning">Please enable JavaScript to view the 118 questions and published preparation progress.</p></noscript>
+        <div class="sheet-footer"><p>From “Competency level Examples (1).docx”<br>5 subjects · 4 difficulty levels · 118 questions</p><button class="reset-button owner-only" id="reset-button" hidden>Reset progress</button></div>
+        <p class="footer-note" id="footer-note"><strong>Make it your routine.</strong> Easy &amp; Medium for screening rounds. Tough for technical interviews. Very Tough for design &amp; advanced rounds.<br>Progress stays in this browser on this device. Use Backup to keep a copy or move it to another device.</p>
       </section>
     </main>
   </div>
   <input type="file" id="backup-file" accept=".json,application/json" hidden>
   <dialog id="confirm-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description"><h2 id="dialog-title">Reset your progress?</h2><p id="dialog-description">This will uncheck all 118 questions. Save a backup first if you want to keep your progress.</p><div class="dialog-actions"><button class="btn" id="dialog-cancel" autofocus>Keep studying</button><button class="btn danger" id="dialog-confirm">Reset progress</button></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="placement-progress.js"></script>
   <script id="question-data" type="application/json">[
   {
     "id": "dsa",
@@ -901,6 +910,11 @@
       const allQuestions = subjects.flatMap(subject => subject.questions.map(question => ({...question, subject: subject.id, subjectName: subject.name})));
       const knownIds = new Set(allQuestions.map(question => question.id));
       const storageKey = 'prepboard.placement-competency.v1';
+      const editMode = new URLSearchParams(window.location.search).get('edit') === '1';
+      document.body.dataset.mode = editMode ? 'edit' : 'public';
+      let snapshotState = 'unavailable';
+      let published = new Set();
+      let snapshotDate = null;
       const $ = id => document.getElementById(id);
       const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
       const icon = name => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
@@ -916,6 +930,37 @@
         if (!value || value.app !== 'prepboard' || value.version !== 1 || value.questionSet !== 'placement-competency' || !Array.isArray(value.completed) || value.completed.some(id => typeof id !== 'string' || !knownIds.has(id))) throw new Error('Invalid backup');
         return new Set(value.completed);
       }
+      try {
+        const snapshot = window.PLACEMENT_PROGRESS;
+        published = readProgress(snapshot);
+        if (snapshot.publishedAt === null && published.size === 0) {
+          snapshotState = 'unpublished';
+        } else if (typeof snapshot.publishedAt === 'string' && Number.isFinite(Date.parse(snapshot.publishedAt))) {
+          snapshotState = 'ready';
+          snapshotDate = new Date(snapshot.publishedAt).toLocaleString(undefined, {dateStyle:'medium', timeStyle:'short'});
+        } else throw new Error('Invalid snapshot date');
+      } catch (error) { published = new Set(); }
+      completed = new Set(published);
+
+      function configureView() {
+        document.querySelectorAll('.owner-only').forEach(element => { element.hidden = !editMode; });
+        $('page-intro').textContent = editMode ? 'Update your preparation checklist. Save a public update when you’re ready to share it.' : 'Follow Prince Raj’s placement preparation across DSA, OOPS, DBMS, Networking and SQL.';
+        $('workspace-caption').textContent = editMode ? 'DRAFT WORKSPACE' : 'PREPARATION';
+        $('progress-label').textContent = editMode ? 'Your draft progress' : 'Prince Raj’s overall progress';
+        $('mode-link').href = editMode ? 'placement-tracker.html' : 'placement-tracker.html?edit=1';
+        $('mode-link').textContent = editMode ? 'View public progress' : 'Update my progress';
+        $('sheet-helper').textContent = editMode ? 'Draft saves on this device' : 'Published checklist · View only';
+        $('publication-title').textContent = editMode ? 'Your preparation draft' : 'Prince Raj’s preparation';
+        $('publication-description').textContent = editMode ? 'Ticks are saved in this browser. To share them, use Save public update, replace placement-progress.js in your portfolio folder, then push that file to GitHub.' : snapshotState === 'ready' ? `Progress snapshot updated ${snapshotDate}. Everyone sees this same checklist.` : snapshotState === 'unpublished' ? 'Prince has not published a progress update yet. Browse the full question sheet below.' : 'The public progress snapshot could not be loaded. Reload the page to try again.';
+        $('save-label').textContent = editMode ? 'Draft saved on device' : snapshotState === 'ready' ? 'Published progress' : snapshotState === 'unpublished' ? 'Not published yet' : 'Progress unavailable';
+        $('save-state').title = editMode ? 'Draft changes stay in this browser until you publish the progress file through GitHub.' : snapshotDate ? `Snapshot updated ${snapshotDate}` : 'No preparation progress is currently available to display.';
+        $('footer-note').textContent = editMode ? 'Your previous saved ticks are kept in this browser. Backup can move your draft between devices. Only someone with access to the GitHub repository can publish changes; this draft workspace does not write to the public site.' : 'This checklist shows Prince Raj’s published progress. The percentage is the share of 118 questions marked complete. Updates appear after a new progress file is deployed.';
+        const unavailable = !editMode && snapshotState !== 'ready';
+        $('export-button').disabled = unavailable;
+        document.querySelectorAll('[data-status]').forEach(button => { button.disabled = unavailable && button.dataset.status !== 'all'; });
+      }
+      configureView();
+
       function storageFailure(message) {
         storageAvailable = false;
         $('save-label').textContent = 'Not saved — use Backup';
@@ -923,7 +968,7 @@
         $('storage-warning').textContent = message;
         $('storage-warning').hidden = false;
       }
-      try {
+      if (editMode) try {
         const stored = localStorage.getItem(storageKey);
         if (stored) completed = readProgress(JSON.parse(stored));
         const probe = `${storageKey}.probe`;
@@ -934,11 +979,12 @@
       }
       function progressData() { return {app:'prepboard',version:1,questionSet:'placement-competency',completed:[...completed],exportedAt:new Date().toISOString()}; }
       function saveProgress() {
+        if (!editMode) return;
         try {
           localStorage.setItem(storageKey, JSON.stringify(progressData()));
           storageAvailable = true;
-          $('save-label').textContent = 'Saved on this device';
-          $('save-state').title = 'Progress is saved in this browser on this device';
+          $('save-label').textContent = 'Draft saved on device';
+          $('save-state').title = 'Draft saved in this browser. Use Save public update and push the file to GitHub to publish it.';
           $('storage-warning').hidden = true;
         } catch (error) {
           storageFailure('Your changes could not be saved in this browser. Use Backup → Save progress backup before closing this page.');
@@ -950,20 +996,27 @@
         toastTimer = setTimeout(() => { $('toast').textContent = ''; }, 4200);
       }
       function updateProgress() {
+        const unavailable = !editMode && snapshotState !== 'ready';
         const done = completed.size;
         const percentage = Math.round(done / allQuestions.length * 100);
-        $('progress-done').textContent = done;
-        $('stat-done').textContent = done;
-        $('stat-remaining').textContent = allQuestions.length - done;
-        $('progress-percent').textContent = `${percentage}%`;
+        $('progress-done').textContent = unavailable ? '—' : done;
+        $('stat-done').textContent = unavailable ? '—' : done;
+        $('stat-remaining').textContent = unavailable ? '—' : allQuestions.length - done;
+        $('progress-percent').textContent = unavailable ? '—' : `${percentage}%`;
         $('progress-fill').style.width = `${percentage}%`;
-        $('overall-progress').setAttribute('aria-valuenow', done);
-        $('progress-message').textContent = done === 0 ? 'Your first tick is the first step.' : done === allQuestions.length ? 'All done. Look how far you’ve come!' : `${allQuestions.length - done} more small steps. You’ve got this.`;
+        if (unavailable) {
+          $('overall-progress').removeAttribute('aria-valuenow');
+          $('overall-progress').setAttribute('aria-valuetext', 'Progress not available');
+        } else {
+          $('overall-progress').setAttribute('aria-valuenow', done);
+          $('overall-progress').setAttribute('aria-valuetext', `${done} of ${allQuestions.length} questions completed`);
+        }
+        $('progress-message').textContent = unavailable ? 'No public progress update available yet.' : editMode ? (done === 0 ? 'Your first tick is the first step.' : `${allQuestions.length - done} questions remaining in your draft.`) : `${done} completed · ${allQuestions.length - done} remaining`;
         $('reset-button').disabled = done === 0;
         for (const subject of subjects) {
           const count = subject.questions.filter(question => completed.has(question.id)).length;
-          document.querySelectorAll(`[data-subject-count="${subject.id}"]`).forEach(element => { element.textContent = `${count}/${subject.questions.length}`; });
-          document.querySelectorAll(`[data-topic-count="${subject.id}"]`).forEach(element => { element.textContent = `${count} / ${subject.questions.length}`; });
+          document.querySelectorAll(`[data-subject-count="${subject.id}"]`).forEach(element => { element.textContent = unavailable ? `—/${subject.questions.length}` : `${count}/${subject.questions.length}`; });
+          document.querySelectorAll(`[data-topic-count="${subject.id}"]`).forEach(element => { element.textContent = unavailable ? `— / ${subject.questions.length}` : `${count} / ${subject.questions.length}`; });
           document.querySelectorAll(`[data-topic-fill="${subject.id}"]`).forEach(element => { element.style.width = `${count / subject.questions.length * 100}%`; });
         }
       }
@@ -991,11 +1044,11 @@
         const base = baseQuestions();
         const baseDone = base.filter(question => completed.has(question.id)).length;
         $('tab-all').textContent = base.length;
-        $('tab-done').textContent = baseDone;
-        $('tab-pending').textContent = base.length - baseDone;
+        $('tab-done').textContent = !editMode && snapshotState !== 'ready' ? '—' : baseDone;
+        $('tab-pending').textContent = !editMode && snapshotState !== 'ready' ? '—' : base.length - baseDone;
         const visible = base.filter(question => statusFilter === 'all' || (statusFilter === 'done' ? completed.has(question.id) : !completed.has(question.id)));
         const selectedSubject = subjects.find(subject => subject.id === subjectFilter);
-        $('sheet-heading').textContent = selectedSubject ? `${selectedSubject.shortName} question sheet` : 'Your question sheet';
+        $('sheet-heading').textContent = selectedSubject ? `${selectedSubject.shortName} question sheet` : editMode ? 'Your draft question sheet' : 'Preparation question sheet';
         $('sheet-count').textContent = `${selectedSubject ? selectedSubject.questions.length : allQuestions.length} questions`;
         const hasFilters = subjectFilter !== 'all' || statusFilter !== 'all' || $('difficulty').value !== 'all' || $('search').value.trim() !== '';
         $('result-count').textContent = hasFilters ? `Showing ${visible.length} of ${allQuestions.length} questions` : `Showing all ${allQuestions.length} questions`;
@@ -1005,14 +1058,14 @@
           if (!questions.length) return '';
           return `<details class="topic-section" data-topic="${subject.id}" ${collapsedSubjects.has(subject.id) ? '' : 'open'}><summary class="topic-heading"><span class="topic-badge" aria-hidden="true">${escapeHTML(subject.symbol)}</span><div><div class="topic-name">${escapeHTML(subject.name)}</div><div class="topic-sub">${subject.questions.length} questions · 4 difficulty levels</div></div><span class="topic-progress"><span class="sr-only">Completed </span><span data-topic-count="${subject.id}"></span><span class="mini-track" aria-hidden="true"><span class="mini-fill" style="display:block" data-topic-fill="${subject.id}"></span></span>${icon('chevron').replace('class="icon"','class="icon chevron"')}</span></summary><table class="question-table"><caption class="sr-only">${escapeHTML(subject.name)} checklist</caption><thead><tr><th class="check-col" scope="col"><span class="sr-only">Complete</span>${icon('check').replace('class="icon"','class="icon" style="width:13px;height:13px"')}</th><th class="number-col" scope="col">#</th><th scope="col">QUESTION</th><th class="level-col" scope="col">DIFFICULTY</th><th class="state-col" scope="col">STATUS</th></tr></thead><tbody>${questions.map(question => {
             const done = completed.has(question.id);
-            return `<tr class="${done ? 'is-done' : ''}" data-question="${question.id}"><td class="check-cell"><label class="check-target"><input class="question-check" id="q-${question.id}" data-id="${question.id}" type="checkbox" ${done ? 'checked' : ''} aria-labelledby="label-${question.id}"></label></td><td class="number-cell">${String(question.number).padStart(2,'0')}</td><td><label class="question-label" id="label-${question.id}" for="q-${question.id}">${escapeHTML(question.text)}</label></td><td><span class="difficulty ${question.level.toLowerCase().replaceAll(' ','-')}">${question.level}</span></td><td class="state-cell"><span class="state">${done ? 'Completed' : 'To do'}</span></td></tr>`;
+            return `<tr class="${done ? 'is-done' : ''}" data-question="${question.id}"><td class="check-cell"><label class="check-target"><input class="question-check" id="q-${question.id}" data-id="${question.id}" type="checkbox" ${done ? 'checked' : ''} ${editMode ? '' : 'disabled'} aria-labelledby="label-${question.id}"></label></td><td class="number-cell">${String(question.number).padStart(2,'0')}</td><td><label class="question-label" id="label-${question.id}" for="q-${question.id}">${escapeHTML(question.text)}</label></td><td><span class="difficulty ${question.level.toLowerCase().replaceAll(' ','-')}">${question.level}</span></td><td class="state-cell"><span class="state">${!editMode && snapshotState !== 'ready' ? 'Unpublished' : done ? 'Completed' : 'To do'}</span></td></tr>`;
           }).join('')}</tbody></table></details>`;
         }).join('');
         $('empty-state').hidden = visible.length !== 0;
         const completedView = statusFilter === 'done' && baseDone === 0;
         const finishedView = statusFilter === 'pending' && base.length > 0 && baseDone === base.length;
-        $('empty-title').textContent = completedView ? 'Your next tick starts here' : finishedView ? 'All caught up!' : 'No questions found';
-        $('empty-message').textContent = completedView ? 'Completed questions will appear here as you check them off.' : finishedView ? 'You’ve completed every question in this selection. Explore another subject.' : 'Try another keyword or change your filters.';
+        $('empty-title').textContent = completedView ? (editMode ? 'Your next tick starts here' : 'No completed questions in this selection') : finishedView ? 'All caught up!' : 'No questions found';
+        $('empty-message').textContent = completedView ? (editMode ? 'Completed questions will appear here as you check them off.' : 'Try another subject or view all questions.') : finishedView ? 'Every question in this selection is marked complete. Explore another subject.' : 'Try another keyword or change your filters.';
         document.querySelectorAll('.topic-section').forEach(section => section.addEventListener('toggle', () => {
           if (!section.isConnected) return;
           if (section.open) collapsedSubjects.delete(section.dataset.topic); else collapsedSubjects.add(section.dataset.topic);
@@ -1027,7 +1080,7 @@
       }
       $('questions').addEventListener('change', event => {
         const checkbox = event.target;
-        if (!checkbox.matches('.question-check')) return;
+        if (!checkbox.matches('.question-check') || !editMode) return;
         const id = checkbox.dataset.id;
         const remainingChecks = [...document.querySelectorAll('.question-check')];
         const index = remainingChecks.indexOf(checkbox);
@@ -1043,7 +1096,7 @@
           $('tab-done').textContent = done;
           $('tab-pending').textContent = baseQuestions().length - done;
         } else renderQuestions(nextId || id);
-        notify(`${completed.size} of ${allQuestions.length} completed${storageAvailable ? ' · Progress saved' : ' · Download a backup to save'}`);
+        notify(`${completed.size} of ${allQuestions.length} completed${storageAvailable ? ' · Draft saved on device' : ' · Download a backup to save'}`);
       });
       document.querySelectorAll('[data-status]').forEach(button => button.addEventListener('click', () => {
         statusFilter = button.dataset.status;
@@ -1074,6 +1127,7 @@
       }
       const dateStamp = () => new Date().toISOString().slice(0,10);
       $('export-button').addEventListener('click', () => {
+        if (!editMode && snapshotState !== 'ready') return;
         const rows = [['Number','Subject','Difficulty','Question','Status'], ...allQuestions.map(question => [question.number,question.subjectName,question.level,question.text,completed.has(question.id) ? 'Completed' : 'To do'])];
         const csv = rows.map(row => row.map(value => `"${String(value).replaceAll('"','""')}"`).join(',')).join('\r\n');
         download('\uFEFF' + csv, 'text/csv;charset=utf-8', `placement-prep-${dateStamp()}.csv`);
@@ -1093,6 +1147,7 @@
       $('confirm-dialog').addEventListener('cancel', () => { confirmAction = null; });
       $('dialog-confirm').addEventListener('click', () => { const action = confirmAction; confirmAction = null; $('confirm-dialog').close(); if (action) action(); });
       $('backup-file').addEventListener('change', async event => {
+        if (!editMode) return;
         const file = event.target.files[0]; event.target.value = ''; if (!file) return;
         try {
           if (file.size > 100000) throw new Error('File too large');
@@ -1100,13 +1155,21 @@
           askConfirmation('Restore this backup?', `This backup has ${restored.size} completed questions. Restoring it will replace your current ${completed.size} completed questions.`, 'Restore progress', () => { completed = restored; saveProgress(); renderQuestions(); notify(storageAvailable ? 'Backup restored and saved.' : 'Backup restored for this session. Download a backup before closing.'); });
         } catch (error) { notify('This is not a valid Prepboard backup. Choose a backup JSON file exported from this page.'); }
       });
-      $('reset-button').addEventListener('click', () => askConfirmation('Reset your progress?', 'This will uncheck all 118 questions. Save a backup first if you want to keep your progress.', 'Reset progress', () => { completed.clear(); saveProgress(); renderQuestions(); notify('Progress reset. A fresh start awaits.'); }));
+      $('reset-button').addEventListener('click', () => editMode && askConfirmation('Reset your progress?', 'This will uncheck all 118 questions. Save a backup first if you want to keep your progress.', 'Reset progress', () => { completed.clear(); saveProgress(); renderQuestions(); notify('Progress reset. A fresh start awaits.'); }));
+      $('publish-button').addEventListener('click', () => {
+        if (!editMode) return;
+        askConfirmation('Save a public progress update?', `Your update contains ${completed.size} of ${allQuestions.length} completed questions. Download the file, replace placement-progress.js in your portfolio folder, then commit and push it to GitHub. Visitors see this update after deployment.`, 'Download progress file', () => {
+          const snapshot = {app:'prepboard', version:1, questionSet:'placement-competency', completed:[...completed].sort(), publishedAt:new Date().toISOString()};
+          download('// Published preparation progress for Prince Raj.\nwindow.PLACEMENT_PROGRESS = ' + JSON.stringify(snapshot, null, 2) + ';\n', 'text/javascript;charset=utf-8', 'placement-progress.js');
+          notify('Progress file downloaded. Replace it in your portfolio folder and push to GitHub to publish.');
+        });
+      });
       let printState = null;
       window.addEventListener('beforeprint', () => { printState = [...collapsedSubjects]; document.querySelectorAll('.topic-section').forEach(section => { section.open = true; }); });
       window.addEventListener('afterprint', () => { if (printState) { collapsedSubjects.clear(); printState.forEach(id => collapsedSubjects.add(id)); printState = null; renderQuestions(); } });
       $('print-button').addEventListener('click', () => window.print());
       window.addEventListener('storage', event => {
-        if (event.key !== storageKey && event.key !== null) return;
+        if (!editMode || (event.key !== storageKey && event.key !== null)) return;
         try { completed = event.newValue ? readProgress(JSON.parse(event.newValue)) : new Set(); renderQuestions(); notify('Progress updated from another tab.'); } catch (error) { notify('Could not read progress from another tab. Your current checklist is unchanged.'); }
       });
       renderNavigation();
